@@ -42,5 +42,16 @@ while(True):
         break
     our_points.append(endpoint)
     i = i + 1
-for i in our_points:
-    print(i)
+for k in range(0,len(our_points)):
+    min=1000
+    point=100
+    for i in range(0, len(our_points)):
+        if(our_points[i][0]<min):
+            min=our_points[i][0]
+            point=i
+    for i in range(0, len(our_points)):
+        if(our_points[point][0]==our_points[i][0] and our_points[point][1]>our_points[i][1] and point!=i):
+            point=i
+    print('(',our_points[point][0],',',our_points[point][1],')')
+    our_points[point][0]=1000
+    our_points[point][1]=1000
